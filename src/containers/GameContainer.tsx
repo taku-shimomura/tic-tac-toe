@@ -3,7 +3,7 @@ import {Dispatch} from 'redux'
 import {connect} from 'react-redux'
 import {gameActions} from '../actions/action'
 import Game from '../components/Game'
-import {AppState } from '../reducers/reducer'
+import { gameState } from '../reducers/reducer'
 
 /*
 export interface GameActions {
@@ -19,8 +19,8 @@ const mapDispatchToProps = (dispatch: Dispatch<Action<any>>) => {
 
 export type GameActions = ReturnType<typeof mapDispatchToProps>
 
-const mapStateToProps = (state: AppState) => {
-    return { ...state.game　}　
+const mapStateToProps = (state: gameState) => {
+    return { ...state　}　
 }
 
 export default connect(
