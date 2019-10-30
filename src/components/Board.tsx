@@ -4,7 +4,7 @@ import Square from './Square'
 import '../style.css'
 
 type BoardProps = {
-    squares: []
+    squares: Array<number>
     onClick: () => Action<void>
 }
 

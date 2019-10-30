@@ -8,6 +8,10 @@ export type gameState = {
     xIsNext: boolean
 }
 
+export type AppState = {
+    game: gameState
+}
+
 const initialState: gameState = {
     history: [
         {
@@ -23,6 +27,6 @@ export const gameReducer = reducerWithInitialState(initialState)
         return Object.assign({}, state, {i})
     })
 
-    export default () => combineReducers<gameState>({
-        gameReducer
-    })
+export default () => combineReducers<AppState>({
+    game: gameReducer
+})
