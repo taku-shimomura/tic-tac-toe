@@ -2,15 +2,15 @@ import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import {combineReducers} from 'redux'
 import { gameActions } from '../actions/action'
 
-export type gameState = {
-    history: any
+export interface gameState {
+    history: [{
+        squares: string[]
+    }]
     stepNumber: number
     xIsNext: boolean
 }
 
-export type AppState = {
-    game: gameState
-}
+
 
 const initialState: gameState = {
     history: [
@@ -24,8 +24,13 @@ const initialState: gameState = {
 
 export const gameReducer = reducerWithInitialState(initialState)
     .case(gameActions.handleClick, (state, i) => {
-        return Object.assign({}, state, {i})
+        //クリックしたら x か ◯ がつく。 
+        return Object.assign({}, state, {i}) 
     })
+
+export type AppState = {
+    game: gameState
+}
 
 export default () => combineReducers<AppState>({
     game: gameReducer
