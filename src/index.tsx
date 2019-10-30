@@ -3,11 +3,11 @@ import { createStore } from 'redux';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import './index.css';
-import reducer from './reducers/reducer'
+import {gameReducer} from './reducers/reducer'
 import GameContainer from './containers/GameContainer'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducer)
+const store = createStore(gameReducer)
 
 ReactDOM.render(
     <Provider store={store}>
