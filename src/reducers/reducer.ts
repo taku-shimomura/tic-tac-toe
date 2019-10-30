@@ -25,7 +25,7 @@ const initialState: gameState = {
 export const gameReducer = reducerWithInitialState(initialState)
     .case(gameActions.handleClick, (state, i) => {
         //クリックしたら x か ◯ がつく。 
-        return Object.assign({}, state, {i}) 
+        return Object.assign({}, state) 
     })
 
 export type AppState = {
