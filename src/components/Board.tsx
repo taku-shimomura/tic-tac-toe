@@ -5,52 +5,52 @@ import '../style.css'
 
 type BoardProps = {
     squares: Array<number>
-    onClick: () => Action<void>
+    onClick: (i: number) => Action<void>
 }
 
-const Board = (props) => {
+const Board = (props: BoardProps) => {
     return(
         <div>
             <div className="board-row">
                 <Square
                     value={props.squares[0]}
-                    onClick={() => props.onClik(0)}
+                    onClick={() => props.onClick(0)}
                 />
                 <Square
                     value={props.squares[1]}
-                    onClick={() => props.onClik(1)}
+                    onClick={() => props.onClick(1)}
                 />
                 <Square
                     value={props.squares[2]}
-                    onClick={() => props.onClik(2)}
+                    onClick={() => props.onClick(2)}
                 />
             </div>
             <div className="board-row">
                 <Square
                     value={props.squares[3]}
-                    onClick={() => props.onClik(3)}
+                    onClick={() => props.onClick(3)}
                 />
                 <Square
                     value={props.squares[4]}
-                    onClick={() => props.onClik(4)}
+                    onClick={() => props.onClick(4)}
                 />
                 <Square
                     value={props.squares[5]}
-                    onClick={() => props.onClik(5)}
+                    onClick={() => props.onClick(5)}
                 />
             </div>
             <div className="board-row">
                 <Square
                     value={props.squares[6]}
-                    onClick={() => props.onClik(6)}
+                    onClick={() => props.onClick(6)}
                 />
                 <Square
                     value={props.squares[7]}
-                    onClick={() => props.onClik(7)}
+                    onClick={() => props.onClick(7)}
                 />
                 <Square
                     value={props.squares[8]}
-                    onClick={() => props.onClik(8)}
+                    onClick={() => props.onClick(8)}
                 />
             </div>
         </div>

@@ -2,11 +2,11 @@ import React from 'react'
 import '../style.css'
 
 type SquareProps = {
-    value: string
+    value: number 
     onClick: () => void
 }
 
-const Square: React.FC<SquareProps> = props => {
+const Square: React.FC<SquareProps> = (props: SquareProps) => {
     return (
         <button className="square" onClick={props.onClick}>
             {props.value}
