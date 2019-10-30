@@ -4,8 +4,8 @@ import Square from './Square'
 import '../style.css'
 
 type BoardProps = {
-    squares: Array<number>
-    onClick: (i: number) => Action<void>
+    squares: Array<string>
+    onClick: (i: number) => Action<number>
 }
 
 const Board = (props: BoardProps) => {
@@ -14,43 +14,52 @@ const Board = (props: BoardProps) => {
             <div className="board-row">
                 <Square
                     value={props.squares[0]}
-                    onClick={() => props.onClick(0)}
+                    index={0}
+                    onClick={props.onClick}
                 />
                 <Square
                     value={props.squares[1]}
-                    onClick={() => props.onClick(1)}
+                    index={1}
+                    onClick={props.onClick}
                 />
                 <Square
                     value={props.squares[2]}
-                    onClick={() => props.onClick(2)}
+                    index={2}
+                    onClick={props.onClick}
                 />
             </div>
             <div className="board-row">
                 <Square
                     value={props.squares[3]}
-                    onClick={() => props.onClick(3)}
+                    index={3}
+                    onClick={props.onClick}
                 />
                 <Square
                     value={props.squares[4]}
-                    onClick={() => props.onClick(4)}
+                    index={4}
+                    onClick={props.onClick}
                 />
                 <Square
                     value={props.squares[5]}
-                    onClick={() => props.onClick(5)}
+                    index={5}
+                    onClick={props.onClick}
                 />
             </div>
             <div className="board-row">
                 <Square
                     value={props.squares[6]}
-                    onClick={() => props.onClick(6)}
+                    index={6}
+                    onClick={props.onClick}
                 />
                 <Square
                     value={props.squares[7]}
-                    onClick={() => props.onClick(7)}
+                    index={7}
+                    onClick={props.onClick}
                 />
                 <Square
                     value={props.squares[8]}
-                    onClick={() => props.onClick(8)}
+                    index={8}
+                    onClick={props.onClick}
                 />
             </div>
         </div>

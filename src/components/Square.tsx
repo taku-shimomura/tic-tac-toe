@@ -1,14 +1,16 @@
 import React from 'react'
+import {Action} from 'typescript-fsa'
 import '../style.css'
 
 type SquareProps = {
-    value: number 
-    onClick: () => void
+    value: string
+    index: number
+    onClick: (index: number) => Action<number>
 }
 
 const Square: React.FC<SquareProps> = (props: SquareProps) => {
     return (
-        <button className="square" onClick={props.onClick}>
+        <button className="square" onClick={() => props.onClick(props.index)}>
             {props.value}
         </button>
     )
