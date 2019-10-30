@@ -3,11 +3,13 @@ import {Dispatch} from 'redux'
 import {connect} from 'react-redux'
 import {gameActions} from '../actions/action'
 import Game from '../components/Game'
-import {gameState} from '../reducers/reducer'
+import {AppState } from '../reducers/reducer'
 
+/*
 export interface GameActions {
     handleClick: (i: number) => Action<any>
 }
+*/
 
 const mapDispatchToProps = (dispatch: Dispatch<Action<any>>) => {
     return {
@@ -15,8 +17,10 @@ const mapDispatchToProps = (dispatch: Dispatch<Action<any>>) => {
     }
 }
 
-const mapStateToProps = (state: gameState) => {
-    return Object.assign({}, state)
+export type GameActions = ReturnType<typeof mapDispatchToProps>
+
+const mapStateToProps = (state: AppState) => {
+    return { ...state.game　}　
 }
 
 export default connect(
