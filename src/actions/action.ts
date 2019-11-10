@@ -1,7 +1,7 @@
-import actionCreatorFactory from 'typescript-fsa'
+import actionCreatorFactory from "typescript-fsa";
 
-const actionCreator = actionCreatorFactory()
+const actionCreator = actionCreatorFactory();
 
 export const gameActions = {
-    handleClick: actionCreator<number>('GAME_HANDLE_CLICK')
-}
+  handleClick: actionCreator<number>("GAME_HANDLE_CLICK")
+};
