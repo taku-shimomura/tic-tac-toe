@@ -1,6 +1,7 @@
 import { reducerWithInitialState } from "typescript-fsa-reducers";
 import { combineReducers } from "redux";
 import { gameActions } from "../actions/action";
+import { calculateWinner } from "../helpers/calculateWinner";
 
 export interface gameState {
   history: [
@@ -29,6 +30,10 @@ export const gameReducer = reducerWithInitialState(initialState).case(
     const history = state.history.slice(0, state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return Object.assign({}, state);
+    }
+
     if (!squares[i]) {
       squares[i] = state.xIsNext ? "X" : "○";
       current.squares = squares;
