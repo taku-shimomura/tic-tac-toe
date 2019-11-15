@@ -10,13 +10,10 @@ type IProps = gameState & GameActions;
 const Game = (props: IProps) => {
   const current = props.history[0].squares;
   const winner = calculateWinner(current);
-  let status = "";
 
-  if (winner) {
-    status = `Winner: ${winner}`;
-  } else {
-    status = `Next Player: ${props.xIsNext ? "X" : "○"}`;
-  }
+  const status = winner
+    ? `Winner: ${winner}`
+    : `Next Player: ${props.xIsNext ? "X" : "○"}`;
 
   return (
     <div>
